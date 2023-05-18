@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using DotnetCoreMssql.Data;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -24,9 +23,13 @@ public class Program
                 {
                     services.AddControllers(); // Add controller services to the container
 
-                    // Retrieve the connection string from the appsettings.json file
-                    IConfiguration configuration = hostContext.Configuration;
-                    string connectionString = configuration.GetConnectionString("DefaultConnection");
+                    string server = Environment.GetEnvironmentVariable("MSSQL_IP") ?? "localhost";
+                    string port = Environment.GetEnvironmentVariable("MSSQL_PORT") ?? "";
+                    string database = Environment.GetEnvironmentVariable("MSSQL_DB") ?? "";
+                    string user = Environment.GetEnvironmentVariable("MSSQL_USER") ?? "";
+                    string password = Environment.GetEnvironmentVariable("MSSQL_PASSWORD") ?? "";
+
+                    string connectionString = $"Server={server},{port};Database={database};User Id={user};Password={password};TrustServerCertificate=true;";
 
                     // Configure the DbContext with the retrieved connection string
                     services.AddDbContext<AppDbContext>(options =>
@@ -56,8 +59,6 @@ public class Program
 
     private static string GetPortFromEnvironment()
     {
-        // Read the environment variable for the port, e.g., "ASPNETCORE_PORT"
-        string port = Environment.GetEnvironmentVariable("ASPNETCORE_PORT") ?? "5000";
-        return port;
+        return Environment.GetEnvironmentVariable("PORT") ?? "";
     }
 }

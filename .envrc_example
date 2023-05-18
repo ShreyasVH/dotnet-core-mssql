@@ -1,2 +1,10 @@
-export ASPNETCORE_PORT=
+export PORT=
+
+# dotnet core path
 export PATH=
+
+export MSSQL_IP=
+export MSSQL_PORT=
+export MSSQL_DB=
+export MSSQL_USER=
+export MSSQL_PASSWORD=
