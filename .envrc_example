@@ -8,3 +8,6 @@ export MSSQL_PORT=
 export MSSQL_DB=
 export MSSQL_USER=
 export MSSQL_PASSWORD=
+
+# sqlcmd 1.8.2 path
+export PATH=
