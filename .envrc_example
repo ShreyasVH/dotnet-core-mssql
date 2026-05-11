@@ -1,6 +1,6 @@
 export PORT=
 
-# dotnet core path
+# dotnet core 10.0.203 path
 export PATH=
 
 export MSSQL_IP=
