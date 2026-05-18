@@ -1,6 +1,6 @@
 export PORT=
 
-# dotnet core path
+# dotnet core 10.0.203 path
 export PATH=
 
 export MSSQL_IP=
@@ -9,5 +9,5 @@ export MSSQL_DB=
 export MSSQL_USER=
 export MSSQL_PASSWORD=
 
-# sqlcmd 1.8.2 path
+# sqlcmd 1.10.0 path
 export PATH=
