@@ -3,6 +3,10 @@ export PORT=
 # dotnet core 10.0.300 path
 export PATH=
 
+# dotnet tools path
+export PATH=
+export DOTNET_ROOT=
+
 export MSSQL_IP=
 export MSSQL_PORT=
 export MSSQL_DB=
