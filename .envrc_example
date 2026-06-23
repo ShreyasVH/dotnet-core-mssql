@@ -1,6 +1,6 @@
 export PORT=
 
-# dotnet core 10.0.300 path
+# dotnet core 10.0.301 path
 export PATH=
 
 # dotnet tools path
