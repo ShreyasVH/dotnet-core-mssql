@@ -6,3 +6,4 @@ publish
 Properties
 compile.log
 server.log
+upgradeLog.txt
